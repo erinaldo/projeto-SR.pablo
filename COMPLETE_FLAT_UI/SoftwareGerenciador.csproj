@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C6921B3-8558-4914-8254-11C9EE505B00}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoftwareGerenciador</RootNamespace>
+    <AssemblyName>SoftwareGerenciador</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Programacion\instaladores\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5DC12FED69455C5A8A9A1DE0E520C128CB66939E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>COMPLETE_FLAT_UI_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SoftwareGerenciador.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconfinder_management_2799204.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.11.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.11.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Impactro.Cobranca, Version=2.17.7.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Impactro.Cobranca.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.18\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.10.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.10.9\lib\net452\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlBackup, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlBackup.1.0.1\lib\MySqlBackup.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Tulpep.NotificationWindow, Version=1.1.25.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tulpep.NotificationWindow.1.1.25\lib\net40\Tulpep.NotificationWindow.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agenda\FrmAgendamentoVeicular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agenda\FrmAgendamentoVeicular.Designer.cs">
+      <DependentUpon>FrmAgendamentoVeicular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agenda\FrmNovoAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agenda\FrmNovoAgendamento.Designer.cs">
+      <DependentUpon>FrmNovoAgendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alerta\Form_Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alerta\Form_Alert.Designer.cs">
+      <DependentUpon>Form_Alert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FormListaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FormListaClientes.designer.cs">
+      <DependentUpon>FormListaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FrmProdutosFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FrmProdutosFornecedor.Designer.cs">
+      <DependentUpon>FrmProdutosFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContasApagar\frmcontaApagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContasApagar\frmcontaApagar.Designer.cs">
+      <DependentUpon>frmcontaApagar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContasApagar\frmListaContasApagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContasApagar\frmListaContasApagar.Designer.cs">
+      <DependentUpon>frmListaContasApagar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FrmResumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\FrmResumo.Designer.cs">
+      <DependentUpon>FrmResumo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FrmTelaFinanceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\FrmTelaFinanceiro.Designer.cs">
+      <DependentUpon>FrmTelaFinanceiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Corretor\FrmCorretor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Corretor\FrmCorretor.Designer.cs">
+      <DependentUpon>FrmCorretor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Corretor\FrmNovoCorretor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Corretor\FrmNovoCorretor.Designer.cs">
+      <DependentUpon>FrmNovoCorretor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmParamentros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmParamentros.Designer.cs">
+      <DependentUpon>FrmParamentros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lancamentos\FrmCategoriaDespesaReceitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lancamentos\FrmCategoriaDespesaReceitas.Designer.cs">
+      <DependentUpon>FrmCategoriaDespesaReceitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lancamentos\FrmDespesasLancamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lancamentos\FrmDespesasLancamento.Designer.cs">
+      <DependentUpon>FrmDespesasLancamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Load\FrmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Load\FrmLoading.Designer.cs">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensalidade\Contrato Mensalidade Imprestimo\frmBasico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensalidade\Contrato Mensalidade Imprestimo\frmBasico.Designer.cs">
+      <DependentUpon>frmBasico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensalidade\Contrato Mensalidade Imprestimo\FrmCriarCodicoesPagamentoImprestimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensalidade\Contrato Mensalidade Imprestimo\FrmCriarCodicoesPagamentoImprestimo.Designer.cs">
+      <DependentUpon>FrmCriarCodicoesPagamentoImprestimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensalidade\Contrato Mensalidade Imprestimo\frmReceberPagamentoImprestimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensalidade\Contrato Mensalidade Imprestimo\frmReceberPagamentoImprestimo.Designer.cs">
+      <DependentUpon>frmReceberPagamentoImprestimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensalidade\Contrato Mensalidade Imprestimo\frmSelecionaContratoImprestimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensalidade\Contrato Mensalidade Imprestimo\frmSelecionaContratoImprestimo.Designer.cs">
+      <DependentUpon>frmSelecionaContratoImprestimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensalidade\Contrato Mensalidade Imprestimo\MetodosDeExtensaoDeDecimal.cs" />
+    <Compile Include="Mensalidade\Contrato Mensalidade Imprestimo\Parcela.cs" />
+    <Compile Include="Mensalidade\Contrato Mensalidade Imprestimo\SistemaDeAmortizacaoConstante.cs" />
+    <Compile Include="Mensalidade\Contrato Mensalidade Imprestimo\SistemaDeAmortizacaoPrice.cs" />
+    <Compile Include="Mensalidade\FrmCancelamentoContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensalidade\FrmCancelamentoContrato.Designer.cs">
+      <DependentUpon>FrmCancelamentoContrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensalidade\FrmContratos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensalidade\FrmContratos.Designer.cs">
+      <DependentUpon>FrmContratos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensalidade\FrmCriarCodicoesPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensalidade\FrmCriarCodicoesPagamento.Designer.cs">
+      <DependentUpon>FrmCriarCodicoesPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensalidade\frmReceberPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensalidade\frmReceberPagamento.Designer.cs">
+      <DependentUpon>frmReceberPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Faturamento\frmconsultadepagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Faturamento\frmconsultadepagamento.Designer.cs">
+      <DependentUpon>frmconsultadepagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\FrmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\FrmUsuario.Designer.cs">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensalidade\frmSelecionaContrato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensalidade\frmSelecionaContrato.Designer.cs">
+      <DependentUpon>frmSelecionaContrato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensalidade\Contrato Mensalidade Imprestimo\JurosCompostos.cs" />
+    <Compile Include="MenuPrincipal\FormLogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal\FormLogo.designer.cs">
+      <DependentUpon>FormLogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FormNovoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FormNovoCliente.designer.cs">
+      <DependentUpon>FormNovoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal\FormMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal\FormMenuPrincipal.Designer.cs">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal\FrmNotificacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal\FrmNotificacao.Designer.cs">
+      <DependentUpon>FrmNotificacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal\MessageBoxEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal\MessageBoxEx.Designer.cs">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imovél\FrmCadastroImovel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Imovél\FrmCadastroImovel.Designer.cs">
+      <DependentUpon>FrmCadastroImovel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imovél\frmListaImovel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Imovél\frmListaImovel.Designer.cs">
+      <DependentUpon>frmListaImovel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recibo\FrmRecibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recibo\FrmRecibo.Designer.cs">
+      <DependentUpon>FrmRecibo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TesteConexao.cs" />
+    <Compile Include="TestePenDriver\CargaPDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestePenDriver\CargaPDV.Designer.cs">
+      <DependentUpon>CargaPDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestePenDriver\PenDrive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestePenDriver\PenDrive.Designer.cs">
+      <DependentUpon>PenDrive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Agenda\FrmAgendamentoVeicular.resx">
+      <DependentUpon>FrmAgendamentoVeicular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agenda\FrmNovoAgendamento.resx">
+      <DependentUpon>FrmNovoAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alerta\Form_Alert.resx">
+      <DependentUpon>Form_Alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FormListaClientes.resx">
+      <DependentUpon>FormListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FrmProdutosFornecedor.resx">
+      <DependentUpon>FrmProdutosFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContasApagar\frmcontaApagar.resx">
+      <DependentUpon>frmcontaApagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContasApagar\frmListaContasApagar.resx">
+      <DependentUpon>frmListaContasApagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\FrmResumo.resx">
+      <DependentUpon>FrmResumo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\FrmTelaFinanceiro.resx">
+      <DependentUpon>FrmTelaFinanceiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Corretor\FrmCorretor.resx">
+      <DependentUpon>FrmCorretor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Corretor\FrmNovoCorretor.resx">
+      <DependentUpon>FrmNovoCorretor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmParamentros.resx">
+      <DependentUpon>FrmParamentros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lancamentos\FrmCategoriaDespesaReceitas.resx">
+      <DependentUpon>FrmCategoriaDespesaReceitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lancamentos\FrmDespesasLancamento.resx">
+      <DependentUpon>FrmDespesasLancamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Load\FrmLoading.resx">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensalidade\Contrato Mensalidade Imprestimo\frmBasico.resx">
+      <DependentUpon>frmBasico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensalidade\Contrato Mensalidade Imprestimo\FrmCriarCodicoesPagamentoImprestimo.resx">
+      <DependentUpon>FrmCriarCodicoesPagamentoImprestimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensalidade\Contrato Mensalidade Imprestimo\frmReceberPagamentoImprestimo.resx">
+      <DependentUpon>frmReceberPagamentoImprestimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensalidade\Contrato Mensalidade Imprestimo\frmSelecionaContratoImprestimo.resx">
+      <DependentUpon>frmSelecionaContratoImprestimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensalidade\FrmCancelamentoContrato.resx">
+      <DependentUpon>FrmCancelamentoContrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensalidade\FrmContratos.resx">
+      <DependentUpon>FrmContratos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensalidade\FrmCriarCodicoesPagamento.resx">
+      <DependentUpon>FrmCriarCodicoesPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensalidade\frmReceberPagamento.resx">
+      <DependentUpon>frmReceberPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Faturamento\frmconsultadepagamento.resx">
+      <DependentUpon>frmconsultadepagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\FrmUsuario.resx">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensalidade\frmSelecionaContrato.resx">
+      <DependentUpon>frmSelecionaContrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal\FormLogo.resx">
+      <DependentUpon>FormLogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FormNovoCliente.resx">
+      <DependentUpon>FormNovoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal\FormMenuPrincipal.resx">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal\FrmNotificacao.resx">
+      <DependentUpon>FrmNotificacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal\MessageBoxEx.resx">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imovél\FrmCadastroImovel.resx">
+      <DependentUpon>FrmCadastroImovel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imovél\frmListaImovel.resx">
+      <DependentUpon>frmListaImovel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Recibo\FrmRecibo.resx">
+      <DependentUpon>FrmRecibo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestePenDriver\CargaPDV.resx">
+      <DependentUpon>CargaPDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestePenDriver\PenDrive.resx">
+      <DependentUpon>PenDrive.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\satellite-dish %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\APs.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Membresia.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new logo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new logo4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new logo5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Planes.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\satellite-dish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shut-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoUI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoUI2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accountlogin-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Novo Logo Jv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dados\Dados.csproj">
+      <Project>{28EBB8E0-8D76-4882-9D1D-0D608F0C8343}</Project>
+      <Name>Dados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{5b7a05e8-bf96-4602-a5de-c4e702ac8bd8}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\Impactro.Cobranca.dll" />
+    <Content Include="DLL\Impactro.Cobranca.xml" />
+    <Content Include="ImagemNotificacao.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pegasus.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="iconfinder_management_2799204.ico" />
+    <Content Include="MetroFramework.txt" />
+    <None Include="Resources\imagemFundo.jpg" />
+    <Content Include="Resources\Pegasus.png" />
+    <None Include="Resources\BoletoCustomizado1.bmp" />
+    <None Include="Resources\SeuLogo.gif" />
+    <None Include="Resources\BoletoCustomizado.bmp" />
+    <None Include="Resources\imprimir.jpg" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\icons8_cancel_25px.png" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\success.png" />
+    <None Include="Resources\word.jpg" />
+    <None Include="Resources\2345356.png" />
+    <None Include="Resources\if_ic_add_circle_48px_3520051.png" />
+    <None Include="Resources\vendedor.jpg" />
+    <None Include="Resources\depositphotos_197525686-stock-illustration-hand-holding-money-hand-banknotes.jpg" />
+    <None Include="Resources\cadastro cliente.png" />
+    <None Include="Resources\iconfinder_BT_c3tool_905663.png" />
+    <None Include="Resources\index.png" />
+    <None Include="Resources\if_1-08_511566.png" />
+    <None Include="Resources\if_miscellaneous-04_809403.png" />
+    <None Include="Resources\iconfinder_menu-alt_134216.png" />
+    <None Include="Resources\107f00f6-b9f8-440a-8f26-c86d0f0b4f9b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Carteira\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\cs\Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Humanizer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
