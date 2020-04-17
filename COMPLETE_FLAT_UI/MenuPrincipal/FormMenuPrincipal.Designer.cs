@@ -79,7 +79,6 @@
             this.consultarContratosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boeltoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçãoDoSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -722,23 +721,15 @@
             // configuraçãoToolStripMenuItem
             // 
             this.configuraçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backupToolStripMenuItem,
             this.configuraçãoDoSistemaToolStripMenuItem});
             this.configuraçãoToolStripMenuItem.Name = "configuraçãoToolStripMenuItem";
             this.configuraçãoToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.configuraçãoToolStripMenuItem.Text = "Configuração";
             // 
-            // backupToolStripMenuItem
-            // 
-            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(297, 22);
-            this.backupToolStripMenuItem.Text = "backup ( Cópia Banco de dados )";
-            this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
-            // 
             // configuraçãoDoSistemaToolStripMenuItem
             // 
             this.configuraçãoDoSistemaToolStripMenuItem.Name = "configuraçãoDoSistemaToolStripMenuItem";
-            this.configuraçãoDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(297, 22);
+            this.configuraçãoDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
             this.configuraçãoDoSistemaToolStripMenuItem.Text = "Configuração do Sistema";
             this.configuraçãoDoSistemaToolStripMenuItem.Click += new System.EventHandler(this.configuraçãoDoSistemaToolStripMenuItem_Click);
             // 
@@ -1001,7 +992,6 @@
         private System.Windows.Forms.ToolStripMenuItem consultarContratosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem configuraçãoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuraçãoDoSistemaToolStripMenuItem;
         private System.Windows.Forms.Button BtnContasPagar;
         private System.Windows.Forms.ListBox listViewConteudo;
