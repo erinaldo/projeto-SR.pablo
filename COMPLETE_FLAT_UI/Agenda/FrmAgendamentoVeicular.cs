@@ -20,7 +20,7 @@ namespace SoftwareGerenciador.Agenda
 {
     public partial class FrmAgendamentoVeicular : Form
     {
-        public Parametros ParametrosDados;
+        public Parametros ParametrosDados ;
         public FrmAgendamentoVeicular()
         {
             InitializeComponent();
